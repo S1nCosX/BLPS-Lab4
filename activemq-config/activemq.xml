@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:broker="http://activemq.apache.org/schema/core"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+    <broker:broker id="embedded-broker" brokerName="localhost" persistent="false">
+        <broker:transportConnectors>
+            <broker:transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
+            <broker:transportConnector name="xmpp" uri="xmpp://0.0.0.0:61222"/>
+        </broker:transportConnectors>
+    </broker:broker>
+</beans>

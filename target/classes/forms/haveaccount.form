@@ -1,0 +1,43 @@
+{
+  "components": [
+    {
+      "text": "# У вас есть аккаунт?",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1cj3mqr",
+        "columns": null
+      },
+      "id": "Field_0he4xc3"
+    },
+    {
+      "values": [
+        {
+          "label": "Да",
+          "value": "true"
+        },
+        {
+          "label": "Нет",
+          "value": "false"
+        }
+      ],
+      "label": "",
+      "type": "select",
+      "layout": {
+        "row": "Row_0a6runf",
+        "columns": null
+      },
+      "id": "Field_1v0rp59",
+      "key": "have_account"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0jopu8p",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}

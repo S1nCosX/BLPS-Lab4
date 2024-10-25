@@ -1,0 +1,103 @@
+{
+  "components": [
+    {
+      "text": "Регистрация",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_12sbi76",
+        "columns": null
+      },
+      "id": "Field_0935gcv"
+    },
+    {
+      "label": "Имя",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1r9aqir",
+        "columns": null
+      },
+      "id": "Field_1u5gano",
+      "key": "firstName",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Фамилия",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1qyem0g",
+        "columns": null
+      },
+      "id": "Field_0obyk5a",
+      "key": "lastName",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Email",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ez2vqo",
+        "columns": null
+      },
+      "id": "Field_0ba12nj",
+      "key": "email",
+      "validate": {
+        "required": true,
+        "minLength": 9,
+        "maxLength": 120
+      }
+    },
+    {
+      "label": "Пароль",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1dk0wtd",
+        "columns": null
+      },
+      "id": "Field_0fkx4th",
+      "key": "password",
+      "validate": {
+        "required": true,
+        "minLength": 9,
+        "maxLength": 120
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Модератор",
+          "value": "ROLE_MODERATOR"
+        },
+        {
+          "label": "Соискатель",
+          "value": "ROLE_USER"
+        },
+        {
+          "label": "HR",
+          "value": "ROLE_HR"
+        }
+      ],
+      "label": "Роль",
+      "type": "select",
+      "layout": {
+        "row": "Row_12e7pjl",
+        "columns": null
+      },
+      "id": "Field_13rbfd4",
+      "key": "role"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0jopu8p",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}

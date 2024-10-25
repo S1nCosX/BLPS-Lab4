@@ -1,0 +1,48 @@
+services:
+  activemq:
+    image: rmohr/activemq
+    container_name: activemq_lab4
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+
+  database:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=000000
+      - POSTGRES_DB=studs
+    ports:
+      - "5432:5432"
+
+  myapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: myapp_lab4
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/studs
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=000000
+      - SPRING_ACTIVEMQ_BROKER_URL=tcp://activemq:61616
+      - SPRING_ACTIVEMQ_USER=admin
+      - SPRING_ACTIVEMQ_PASSWORD=admin
+    depends_on:
+      - activemq
+    ports:
+      - "8081:8081"
+
+  secondapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: secondapp_lab4
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/studs
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=000000
+      - SPRING_ACTIVEMQ_BROKER_URL=tcp://activemq:61616
+      - SPRING_ACTIVEMQ_USER=admin
+      - SPRING_ACTIVEMQ_PASSWORD=admin
+    depends_on:
+      - activemq
